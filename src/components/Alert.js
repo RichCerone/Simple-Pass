@@ -1,8 +1,35 @@
 import { Component } from "react";
 
+/**
+ * Shows alert messages to the user.
+ */
 class Alert extends Component {
     render() {
-        const { elId, alertType, message, isHidden} = this.props;
+        const { 
+            /**
+             * The JSX element's id.
+             */
+            elId,
+
+            /**
+             * The type of alert to display.
+             * Supported values: ['info', 'success', 'warning', 'danger']
+             */
+            alertType, 
+
+            /**
+             * The message to display in the alert.
+             */
+            message, 
+
+            /**
+             * Whether alert is hidden on the page.
+             * Supported values: ['false', 'true']
+             */
+            isHidden
+        } = this.props;
+
+        // Determine alert type to show.
         let alertCss = '';
         switch (alertType.toLowerCase()) {
             case 'info':
@@ -26,6 +53,7 @@ class Alert extends Component {
                 break;
         }
 
+        // Check if alert should be shown on page or not.
         if (isHidden)
         {
             alertCss += ' d-none';
