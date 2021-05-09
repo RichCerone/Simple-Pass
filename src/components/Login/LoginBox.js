@@ -6,14 +6,42 @@ import Alert from '../Alert';
 import LoginButton from './LoginButton';
 import SignupButton from './SignupButton';
 
+/**
+ * Generates a login box for user login.
+ */
 class LoginBox extends Component {
     state = {
+        /**
+         * The current password icon class for display.
+         */
         passwordIcon: 'bi bi-eye-fill',
+
+        /**
+         * The current JSX input field type.
+         */
         passwordFieldType: 'password',
+
+        /**
+         * The current alert message to display.
+         */
         alertMessage: '',
+
+        /**
+         * The current type of alert to display. 
+         * Supported values: ['info', 'success', 'warning', 'danger']
+         */
         alertType: '',
+
+        /**
+         * Whether the alert should be hidden on the page.
+         * Supported values: ['false', 'true']
+         */
         isHidden: 'false'
     }
+
+    /**
+     * Changes the password icon on the page.
+     */
     changeIcon = () => {
        if (this.state.passwordIcon === 'bi bi-eye-fill')
        {
@@ -29,11 +57,16 @@ class LoginBox extends Component {
            });
        }
     }
+
+    /**
+     * Shows the password text on the page.
+     */
     showPassword = () => {
         this.setState({
             passwordFieldType: 'text'
         });
     }
+
     render() {
         return(
             <div>

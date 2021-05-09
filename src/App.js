@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar appName='Simple Pass' />
         <div className="container-fluid">
           <br />
           <div className="d-flex justify-content-center">
