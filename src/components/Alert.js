@@ -31,25 +31,31 @@ class Alert extends Component {
 
         // Determine alert type to show.
         let alertCss = '';
+        let iconCss = '';
         switch (alertType.toLowerCase()) {
             case 'info':
                 alertCss = 'alert alert-info';
+                iconCss = 'bi bi-info-circle-fill';
                 break;
 
             case 'success':
                 alertCss = 'alert alert-success';
+                iconCss = 'bi bi-check-circle-fill';
                 break;
 
             case 'warning':
                 alertCss = 'alert alert-warning';
+                iconCss = "bi bi-exclamation-circle-fill";
                 break;
 
             case 'danger':
                 alertCss = 'alert alert-danger';
+                iconCss = 'bi bi-x-circle-fill'
                 break;
 
             default:
                 alertCss = 'alert alert-info';
+                iconCss = 'bi bi-info-circle-fill';
                 break;
         }
 
@@ -61,7 +67,7 @@ class Alert extends Component {
 
         return(
             <div id={elId} className={alertCss}>
-                {message}
+                <i className={iconCss}></i> {message}
             </div>
         );
     }

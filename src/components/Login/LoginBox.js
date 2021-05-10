@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import InputField from '../InputField';
 import InputIcon from '../InputIcon';
-import PasswordIcon from './PasswordIcon';
+import PasswordIcon from '../PasswordIcon';
 import Alert from '../Alert';
 import LoginButton from './LoginButton';
 import SignupButton from './SignupButton';
@@ -34,9 +34,9 @@ class LoginBox extends Component {
 
         /**
          * Whether the alert should be hidden on the page.
-         * Supported values: ['false', 'true']
+         * Supported values: [false, true]
          */
-        isHidden: 'false'
+        isHidden: true
     }
 
     /**
@@ -56,15 +56,6 @@ class LoginBox extends Component {
                 passwordFieldType: 'password'
            });
        }
-    }
-
-    /**
-     * Shows the password text on the page.
-     */
-    showPassword = () => {
-        this.setState({
-            passwordFieldType: 'text'
-        });
     }
 
     render() {
@@ -95,7 +86,7 @@ class LoginBox extends Component {
                 <div className="row">
                     <div className="col-12">
                         <div className="input-group mb-3">
-                            <PasswordIcon iconClass={this.state.passwordIcon} changeIcon = {this.changeIcon} />
+                            <PasswordIcon iconClass={this.state.passwordIcon} changeIcon={this.changeIcon} />
                             <InputField eldId="password" fieldType={this.state.passwordFieldType} placeholder="Password" classNameValue="form-control" />
                         </div>
                     </div>
@@ -113,7 +104,7 @@ class LoginBox extends Component {
                             <SignupButton />
                         </div>
                     </div>
-                </div>
+              </div>
             </div>
         )
     }
