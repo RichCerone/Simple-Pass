@@ -57,6 +57,9 @@ class InputField extends Component {
             data-bs-toggle="tooltip" data-bs-placement={tooltipPos} title={tooltipText} />;
     }
 
+    /**
+     * Enable bootstrap tool tips after component mounts to DOM.
+     */
     componentDidMount() {
         const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         tooltipTriggerList.map(function (tooltipTriggerEl) {
