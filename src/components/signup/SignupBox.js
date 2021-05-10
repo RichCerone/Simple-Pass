@@ -17,7 +17,7 @@ class SignupBox extends Component {
          * The current type of alert to display. 
          * Supported values: ['info', 'success', 'warning', 'danger']
          */
-        alertType: 'warning',
+        alertType: '',
 
         /**
          * Whether the alert should be hidden on the page.
